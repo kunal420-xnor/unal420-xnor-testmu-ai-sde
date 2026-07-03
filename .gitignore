@@ -1,0 +1,12 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/.ai-reports/
+/generated/
+.env
+*.log
+
+# Live flaky-history is generated at runtime; the committed seed
+# (.runs/history.seed.json) gives the classifier data on a fresh clone.
+/.runs/history.json

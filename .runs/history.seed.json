@@ -1,0 +1,48 @@
+{
+  "runs": [
+    { "id": "seed-1", "timestamp": "2026-06-20T09:00:00.000Z" },
+    { "id": "seed-2", "timestamp": "2026-06-21T09:00:00.000Z" },
+    { "id": "seed-3", "timestamp": "2026-06-22T09:00:00.000Z" },
+    { "id": "seed-4", "timestamp": "2026-06-23T09:00:00.000Z" },
+    { "id": "seed-5", "timestamp": "2026-06-24T09:00:00.000Z" },
+    { "id": "seed-6", "timestamp": "2026-06-25T09:00:00.000Z" }
+  ],
+  "tests": {
+    "Login > LOGIN-001 valid standard_user reaches the inventory": {
+      "testId": "Login > LOGIN-001 valid standard_user reaches the inventory",
+      "title": "LOGIN-001 valid standard_user reaches the inventory",
+      "results": [
+        { "run": "seed-1", "status": "passed" },
+        { "run": "seed-2", "status": "passed" },
+        { "run": "seed-3", "status": "passed" },
+        { "run": "seed-4", "status": "passed" },
+        { "run": "seed-5", "status": "passed" },
+        { "run": "seed-6", "status": "passed" }
+      ]
+    },
+    "REST API > API-002 create -> read -> update -> delete round-trip": {
+      "testId": "REST API > API-002 create -> read -> update -> delete round-trip",
+      "title": "API-002 create -> read -> update -> delete round-trip",
+      "results": [
+        { "run": "seed-1", "status": "passed" },
+        { "run": "seed-2", "status": "failed", "errorSig": "apiRequestContext.post: timeout of #ms exceeded" },
+        { "run": "seed-3", "status": "passed" },
+        { "run": "seed-4", "status": "failed", "errorSig": "apiRequestContext.post: timeout of #ms exceeded" },
+        { "run": "seed-5", "status": "passed" },
+        { "run": "seed-6", "status": "failed", "errorSig": "apiRequestContext.post: socket hang up" }
+      ]
+    },
+    "Dashboard > DASH-003 sort price low-to-high orders ascending": {
+      "testId": "Dashboard > DASH-003 sort price low-to-high orders ascending",
+      "title": "DASH-003 sort price low-to-high orders ascending",
+      "results": [
+        { "run": "seed-1", "status": "passed" },
+        { "run": "seed-2", "status": "passed" },
+        { "run": "seed-3", "status": "passed" },
+        { "run": "seed-4", "status": "failed", "errorSig": "expect(received).toEqual(expected)" },
+        { "run": "seed-5", "status": "failed", "errorSig": "expect(received).toEqual(expected)" },
+        { "run": "seed-6", "status": "failed", "errorSig": "expect(received).toEqual(expected)" }
+      ]
+    }
+  }
+}
